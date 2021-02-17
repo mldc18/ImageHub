@@ -25,7 +25,7 @@ class PasswordExpiredRequest extends FormRequest
     {
         return [
             'current_password' => 'required',
-            'password' => 'required|confirmed|min:10',
+            'password' => ['required', 'string', 'min:10', 'confirmed', 'zxcvbn_dictionary:username,email','regex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'],
         ];
     }
 }
