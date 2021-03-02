@@ -31,3 +31,4 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/sign-in/google', [App\Http\Controllers\Auth\LoginController::class, 'google']);
 Route::get('/sign-in/google/redirect', [App\Http\Controllers\Auth\LoginController::class, 'googleRedirect']);
 
+

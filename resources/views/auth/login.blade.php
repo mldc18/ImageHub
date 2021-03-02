@@ -28,7 +28,7 @@
                         @enderror
                         <label for="password" class="text-md-right">{{ __('Password') }}</label>
                         </div>
-                    <div class="form-group mb-1">
+                    <div class="form-group mb-2">
                         <div class="d-grid">
                             <button type="submit" class="btn btn-block btn-danger text-light fw-bold">
                                 {{ __('Login') }}
