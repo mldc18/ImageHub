@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="glass col-md-4 px-5 py-5">
             <center>
-                <img src="https://girlwiththetattoos.com/wp-content/uploads/2020/09/pinterest-logo.png" height="120px" class="mb-5">
+                <img src="https://gm1.ggpht.com/KRZH1z5DuY0VN2JcPtGLibd9Gm99DO3Wz41MQB6jiMjmv8LJVla5kPl04N6LlBB4pBQ-5u4mWrcHVALQ2FNB32FpeYVr8IB8d8f0RrXSjCcPH8Qy8ygb9Rlg_Wfl4VVt6LpcsGsFvIufMdSWTXPbL97Kig8x3n_6_6BfUBLkJlEKyyBSyvBRCeCCjqpg80QmSgQiDKGajIsYB0aiudaD_QXW8UPSxPwL_HCJ_nd3tRiXIGa7z-CE_adSs9ebDejN9sjaIP2HRW5VLZZksHRRHEElw4BJp3e4_QY4CgHEeN5be6jCS2eBKHykorhoyhQhNbeNGsRNcLnLNsKlktaWYXRs0_A5zXAMR-XTEtRFPBA64YYrWEBZMzZ-uDj6JH4z6e8rfQhQjywKs_nSn1CGWxMRMzJzxnQo8dpUaMty2BqpmTlh9GSldN4rDUpXAuNsNyLcBWI0A6CutelC4X0tMS79WQWhFgdBgRUWLqaqavDeVCg_28MBUYyfarrkIXLdyHAoaZUGs1gBG0SyNI40tX2m_quz6_nWZ-T5mg1gtjxLGcoy7EfeCIwu9xKRuLZsbP-4ps-bOzwoBAUkclxd7NJ0J8MkiI5mP6LEPKyxTxBo5ga0-lxGpTg-CMEtR-PC-9kfCZa23_3mf-XVI9BLYvcn3KJ0ChNUFev29i9KqbZ-eLWo27zHofrdz0kDovO-P-V3C-WdAfiWOIOOLxV3RVKMia_dx-cb_cXJIxIoQ2vC_ZNW4jRQK4T7xdCroiR3_l6n=s0-l75-ft-l75-ft" height="140px" class="mb-5" style="border-radius: 50%">
             </center>
             <div>
                 <form method="POST" action="{{ route('login') }}">

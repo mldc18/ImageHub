@@ -3,12 +3,12 @@
 @section('content')
 <div class="">
     <div style="height:200px"></div>
-
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="imageTitle">Modal title</h5>
+            <div class="modal-header">   
+              <h6 class="modal-title text-capitalize mx-2" id="imageDesc"></h6>
+              <h6 class="modal-title" id="imageTitle"></h6>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -49,18 +49,19 @@
             showPage();
         }
     });
-    function showImageModal(url, name, date){
+    function showImageModal(url, name, desc){
         console.log('tite');
         $('#imageModal').modal('show');
         $('#placeholder').attr("src", url);
-        $('#imageTitle').text('Published on '+date+' by '+name);
+        $('#imageDesc').text(desc+' : ');
+        $('#imageTitle').text('Published by '+name);
     }
     function showPage(){
         fetch("https://api.unsplash.com/photos?page="+page_num+"&client_id=nm_EGxUFnktlV15-WPx6u1v69BQKsQRfO1ixuQ0iM6A")
         .then(data=>data.json())
             .then(data=>data
                 .forEach(element => {
-                    $('.result').append(`<div class='item mb-2'><img class='unsplash-images' src='${element.urls.small}' onclick='showImageModal("${element.urls.regular}", "${element.user.name}", "${element.created_at}" )'></div>`);
+                    $('.result').append(`<div class='item mb-2'><img class='unsplash-images' src='${element.urls.small}' onclick='showImageModal("${element.urls.regular}", "${element.user.name}", "${element.alt_description}" )'></div>`);
                     var $grid = $('.result').imagesLoaded( function() {
                             // init Masonry after all images have loaded
                             $grid.masonry({
