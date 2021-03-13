@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     if (Auth::check())
-        return View::make('welcome');
+        return View::make('home');
     return view('auth.login');
 });
 
@@ -28,7 +28,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/password/expired', [App\Http\Controllers\Auth\ExpiredPasswordController::class, 'expired'])->name('password.expired');
     Route::post('password/post_expired', [App\Http\Controllers\Auth\ExpiredPasswordController::class, 'postExpired'])->name('password.post_expired');
 });
-Route::get('/sign-in/google', [App\Http\Controllers\Auth\LoginController::class, 'google']);
-Route::get('/sign-in/google/redirect', [App\Http\Controllers\Auth\LoginController::class, 'googleRedirect']);
+Route::get('/sign-in/google', [App\Http\Controllers\Auth\LoginController::class, 'google'])->middleware('guest');
+Route::get('/sign-in/google/redirect', [App\Http\Controllers\Auth\LoginController::class, 'googleRedirect'])->middleware('guest');
 
-
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+Route::post('/create-album', [App\Http\Controllers\ProfileController::class, 'createAlbum'])->name('create-album');

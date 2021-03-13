@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src='http://code.jquery.com/jquery-2.1.3.js'></script>
     <style>
         body{
             font-family: 'Rubik', sans-serif;
@@ -30,7 +31,7 @@
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background: #dc3545">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
-                    <img src="https://gm1.ggpht.com/KRZH1z5DuY0VN2JcPtGLibd9Gm99DO3Wz41MQB6jiMjmv8LJVla5kPl04N6LlBB4pBQ-5u4mWrcHVALQ2FNB32FpeYVr8IB8d8f0RrXSjCcPH8Qy8ygb9Rlg_Wfl4VVt6LpcsGsFvIufMdSWTXPbL97Kig8x3n_6_6BfUBLkJlEKyyBSyvBRCeCCjqpg80QmSgQiDKGajIsYB0aiudaD_QXW8UPSxPwL_HCJ_nd3tRiXIGa7z-CE_adSs9ebDejN9sjaIP2HRW5VLZZksHRRHEElw4BJp3e4_QY4CgHEeN5be6jCS2eBKHykorhoyhQhNbeNGsRNcLnLNsKlktaWYXRs0_A5zXAMR-XTEtRFPBA64YYrWEBZMzZ-uDj6JH4z6e8rfQhQjywKs_nSn1CGWxMRMzJzxnQo8dpUaMty2BqpmTlh9GSldN4rDUpXAuNsNyLcBWI0A6CutelC4X0tMS79WQWhFgdBgRUWLqaqavDeVCg_28MBUYyfarrkIXLdyHAoaZUGs1gBG0SyNI40tX2m_quz6_nWZ-T5mg1gtjxLGcoy7EfeCIwu9xKRuLZsbP-4ps-bOzwoBAUkclxd7NJ0J8MkiI5mP6LEPKyxTxBo5ga0-lxGpTg-CMEtR-PC-9kfCZa23_3mf-XVI9BLYvcn3KJ0ChNUFev29i9KqbZ-eLWo27zHofrdz0kDovO-P-V3C-WdAfiWOIOOLxV3RVKMia_dx-cb_cXJIxIoQ2vC_ZNW4jRQK4T7xdCroiR3_l6n=s0-l75-ft-l75-ft" height="60px" >
+                    <img src="{{url('/images/ym.jpg')}}" height="60px" >
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -61,7 +62,7 @@
                                   Profile
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                  <li><a class="dropdown-item" href="#">{{ auth()->user()->username }}</a></li>
+                                  <li><a class="dropdown-item" href="{{ route('profile') }}">{{ auth()->user()->username }}</a></li>
                                   <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                                     {{ __('logout') }}

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="glass col-md-4 px-5 py-5">
-            <h1 class="my-3">Create moments.</h1>
+            <h1 class="my-3">Explore moments.</h1>
             <div>
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="password">
+                        <input id="password" type="text" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="password">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -60,8 +60,8 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  required autocomplete="new-password">
-                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                        <input id="password-confirm" type="text" class="form-control" name="password_confirmation"  required autocomplete="new-password">
+                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm') }}</label>
                     </div>
 
                     <div class="form-group row mb-0">

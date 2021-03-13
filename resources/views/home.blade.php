@@ -36,69 +36,14 @@
     </div>
     <div style="height:200px"></div>
     <center>
-        <div class="result"></div>
+        <div class="result">
+
+
+        </div>
     </center>
 </div>
-<script src='http://code.jquery.com/jquery-2.1.3.js'></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-<script>
-    let page_num = 1;
-    // when reaching the bottom of result, appends another set of images
-    $(window).bind('scroll', function() {
-        if($(window).scrollTop() >= $('.result').offset().top + $('.result').outerHeight() - window.innerHeight) {
-            showPage();
-        }
-    });
-    function showImageModal(url, name, desc){
-        console.log('tite');
-        $('#imageModal').modal('show');
-        $('#placeholder').attr("src", url);
-        $('#imageDesc').text(desc+' : ');
-        $('#imageTitle').text('Published by '+name);
-    }
-    function showPage(){
-        fetch("https://api.unsplash.com/photos?page="+page_num+"&client_id=nm_EGxUFnktlV15-WPx6u1v69BQKsQRfO1ixuQ0iM6A")
-        .then(data=>data.json())
-            .then(data=>data
-                .forEach(element => {
-                    $('.result').append(`<div class='item mb-2'><img class='unsplash-images' src='${element.urls.small}' onclick='showImageModal("${element.urls.regular}", "${element.user.name}", "${element.alt_description}" )'></div>`);
-                    var $grid = $('.result').imagesLoaded( function() {
-                            // init Masonry after all images have loaded
-                            $grid.masonry({
-                                gutter: 10,
-                                itemSelector: '.item',
-                                isFitWidth: true
-                            });
-                        });
-                    $grid.masonry('reloadItems');
-                }));
-                page_num += 1;
-    }
-    showPage();
-</script>
-<script>
-    function searchPhotos(){
-        console.log('working');
-        let clientId = "nm_EGxUFnktlV15-WPx6u1v69BQKsQRfO1ixuQ0iM6A";
-        let query = document.getElementById("searchInput").value;
-        let url = "https://api.unsplash.com/search/photos?client_id="+clientId+"&query="+query;
-        fetch(url)
-            .then(data=>data.json())
-                .then(data=>data.results
-                    .forEach(element => {
-                        var $result = $(`<div class='item mb-2'><img src='${element.urls.small}'></div>`);
-                        $('.result').prepend($result).masonry('reloadItems');
-                        var $grid = $('.result').imagesLoaded( function() {
-                            // init Masonry after all images have loaded
-                            $grid.masonry({
-                                gutter: 10,
-                                itemSelector: '.item',
-                                isFitWidth: true
-                            });
-                        });
-                    }));
-    }
-</script>
+<script src="{{ asset('js/home.js') }}"></script>
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script>
     $('.result').masonry({

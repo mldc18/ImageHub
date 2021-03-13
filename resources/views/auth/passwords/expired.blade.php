@@ -21,28 +21,28 @@
                         {{ csrf_field() }}
 
                         <div class="form-floating mb-2">
-                            <input id="current_password" type="password" class="form-control" name="current_password" required="">
+                            <input id="current_password" type="text" class="form-control" name="current_password" required="">
                             @error('current_password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-                            <label for="current_password" class="col-md-4 control-label">Current Password</label>
+                            <label for="current_password" class="col-md-4 control-label">Current</label>
                         </div>
 
                         <div class="form-floating mb-2">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="password">
+                            <input id="password" type="text" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required autocomplete="password">
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-                            <label for="password" class="text-md-right">{{ __('password') }}</label>
+                            <label for="password" class="text-md-right">{{ __('Password') }}</label>
                         </div>
 
                         <div class="form-floating mb-2">
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  required autocomplete="new-password">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <input id="password-confirm" type="text" class="form-control" name="password_confirmation"  required autocomplete="new-password">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm') }}</label>
                         </div>
 
                         <div class="form-group">
