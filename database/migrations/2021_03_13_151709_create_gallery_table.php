@@ -18,6 +18,7 @@ class CreateGalleryTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('album_title');
+            $table->json('images')->nullable();
             $table->timestamps();
         });
     }

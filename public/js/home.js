@@ -1,4 +1,3 @@
-console.log("app.js");
 let page_num = 1;
 let search_items = [];
 // when reaching the bottom of result, appends another set of images
@@ -13,11 +12,16 @@ $(window).bind("scroll", function () {
     }
 });
 function showImageModal(url, name, desc) {
-    console.log("tite");
     $("#imageModal").modal("show");
     $("#placeholder").attr("src", url);
     $("#imageDesc").text(desc + " : ");
     $("#imageTitle").text("Published by " + name);
+    $("#imageInput").html(
+        `<input type="hidden" name="image_input" value="` + url + `">`
+    );
+    $("#imageAddAlbum").html(
+        `<button id="imageAddAlbumBtn" onclick="showAlbums()" class="btn btn-outline-light">Add to Album</button>`
+    );
 }
 
 function showPage() {
@@ -50,7 +54,6 @@ function showPage() {
 showPage();
 
 function searchPhotos() {
-    console.log("working");
     let clientId = "nm_EGxUFnktlV15-WPx6u1v69BQKsQRfO1ixuQ0iM6A";
     let query = document.getElementById("searchInput").value;
     let same_query = false;
@@ -94,3 +97,31 @@ function searchPhotos() {
         );
     console.log(url);
 }
+
+function showAlbums() {
+    $("#imageFooter").css("display", "block");
+    $(".form-check-input").focus();
+}
+
+$("#imageModal").on("hidden.bs.modal", function (e) {
+    $("#imageFooter").css("display", "none");
+});
+
+$("#chooseAlbumForm").on("submit", function (e) {
+    e.preventDefault();
+    let id = $('input[name="exampleRadios"]:checked').val();
+    $.ajax({
+        type: "POST",
+        url: "/choose-album/" + id,
+        data: $("#chooseAlbumForm").serialize(),
+        success: function (data) {
+            if (data === "Image is already in the album!") {
+                $(".toast-body").text(data);
+                $("#toastHome").toast("show");
+            } else {
+                $(".toast-body").text("Successfully added an image to album!");
+                $("#toastHome").toast("show");
+            }
+        },
+    });
+});

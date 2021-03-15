@@ -35,12 +35,17 @@ div.gallery {
     margin: 5px;
     border: 1px solid #ccc;
     float: left;
-    width: 180px;
+    width: 210px;
+    border-radius:10px;
   }
   
   div.gallery:hover {
-    border: 1px solid #777;
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
   }
+
+  /* .box:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  } */
   
   div.gallery img {
     width: 100%;
@@ -51,3 +56,14 @@ div.gallery {
     padding: 15px;
     text-align: center;
   }
+
+  input[type='radio'] { transform: scale(1.5); }
+
+  input[type='radio']:after {
+    background-color: #d1d3d1;
+  }
+  input[type='radio']:checked {
+    background-color: #dc3545;
+    border: #dc3545;
+  }
+

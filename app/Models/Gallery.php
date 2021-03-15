@@ -13,5 +13,10 @@ class Gallery extends Model
     protected $fillable = [
         'album_title',
         'user_id',
+        'images'
+    ];
+
+    protected $casts = [
+        'images' => 'array'
     ];
 }
