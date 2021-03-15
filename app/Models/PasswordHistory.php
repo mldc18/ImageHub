@@ -11,5 +11,9 @@ class PasswordHistory extends Model
 
     protected $guarded = [];
 
+    protected $table = 'password_histories';
+    protected $fillable = [
+        'password',
+    ];
 
 }
