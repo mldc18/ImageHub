@@ -32,6 +32,6 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/sign-in/google/redirect',
+        'redirect' => 'https://whispering-harbor-95722.herokuapp.com/sign-in/google/redirect',
     ],
 ];
