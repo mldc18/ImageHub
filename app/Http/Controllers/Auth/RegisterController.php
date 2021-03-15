@@ -92,6 +92,7 @@ class RegisterController extends Controller
                 'password_changed_at' => Carbon::now(),
             ]);
             $passwordHistory = PasswordHistory::create([
+                'user_id' => $user->id,
                 'password' => $user->password
             ]);
             return $user;
