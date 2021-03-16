@@ -3,14 +3,16 @@
 @section('content')
 
 <div class="">
-    <div style="height:200px"></div>
+    <div style="height:100px"></div>
     <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header bg-danger">   
-              <h6 class="modal-title text-capitalize mx-2 text-light" id="imageDesc"></h6>
-              <h6 class="modal-title text-light" id="imageTitle"></h6>
-              <div class="position-absolute" style="right:50px;" id="imageAddAlbum"></div>
+              <h6 class="modal-title text-capitalize mx-2 text-light" id="imageDesc" style="font-family: 'Rubik', sans-serif; font-weight:400"></h6>
+              <h6 class="modal-title text-light" id="imageTitle" style="font-family: 'Rubik', sans-serif; font-weight:400"></h6>
+              @if($albums->isNotEmpty())
+                <div class="position-absolute" style="right:50px;" id="imageAddAlbum"></div>
+              @endif
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -26,7 +28,7 @@
                     <div class="toast-header">
                       <img src="{{url('/images/ym.jpg')}}" height=30 width=30 class="rounded me-2">
                       <input type="hidden" id="hidden_input" disabled>
-                      <strong class="me-auto">YungMalinaw</strong>
+                      <strong class="me-auto">imagehub</strong>
                       <small class="text-muted">just now</small>
                       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>
@@ -58,20 +60,20 @@
     <div class="row justify-content-center">
         <div>
             <div class="my-4">
-                <h1 class='display-1 text-danger my-2 text-center px-3' style="font-family: 'Rubik', sans-serif; font-weight:500;">YungMalinaw.com</h1>
-                <p class="text-center fs-4 text-black-50 px-3">Wala ka bang mapagkuhanan ng malinaw na picture?</p>
+                <h1 class='display-1 text-danger my-2 text-center px-3 py-1' style="font-family: 'Rubik', sans-serif; font-weight:500;">imagehub</h1>
+                <h6 class="text-center fs-4 text-dark px-3" style="font-family: 'Rubik', sans-serif; font-weight:400">Powered by creators everywhere.</h6>
                 <div style="height:50px"></div>
                 <div class="input-group mb-3 w-75 m-auto">
                     <input type="text" id="searchInput" class="form-control" placeholder="search for high-resolution photos" aria-label="Recipient's username" aria-describedby="basic-addon2"
-                    style="height: 70px; font-size: 35px; padding-left:25px;">
+                    style="height: 60px; font-size: 30px; padding-left:25px;">
                     <div class="input-group-append">
-                      <button class="btn bg-danger text-white" onclick="searchPhotos();" style="height: 70px; width: 150px; font-size: 35px;">Search</button>
+                      <button class="btn bg-danger text-white" onclick="searchPhotos();" style="height: 60px; width: 140px; font-size: 30px;">Search</button>
                     </div>
                   </div>
             </div>
         </div>
     </div>
-    <div style="height:200px"></div>
+    <div style="height:100px"></div>
     <center>
         <div class="result">
 

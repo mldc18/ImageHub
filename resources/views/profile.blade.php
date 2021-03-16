@@ -4,10 +4,10 @@
 
 <div aria-live="polite" aria-atomic="true" class="position-relative">
     <div class="toast-container position-absolute top-0 end-0 p-3">
-      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast" id="toastProfile" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
           <img src="{{url('/images/ym.jpg')}}" height=30 width=30 class="rounded me-2">
-          <strong class="me-auto">YungMalinaw</strong>
+          <strong class="me-auto">imagehub</strong>
           <small class="text-muted">just now</small>
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
@@ -20,17 +20,17 @@
 
 <div class="d-flex justify-content-center align-items-center">
   <h1 class='display-1 text-danger my-2 text-center px-3' style="font-family: 'Rubik', sans-serif; font-weight:500;">My Gallery</h1>
-  <button style="height: 50px; width: 50px; font-size: 10px;" class="btn btn-danger text-center" id="createAlbum">Add Album</button>
+  <button style="height: 50px; width: 50px; font-size: 10px; font-family: 'Rubik', sans-serif; font-weight:500;" class="btn btn-danger text-center" id="createAlbum" >Add Album</button>
 </div>
 <div class="album-container p-5 d-flex justify-content-center row">
     @foreach ($albums as $album)
-        <div class="gallery col-md-4 p-0 m-2">
+        <div class="gallery col-md-4 p-0 m-2" id="gallery{{ $album['id'] }}">
             <div onclick="clickView({{ $album['images'] }})">
                 <img src="{{url('/images/ym.jpg')}}">
             </div>
             <h4 class="desc px-3 pt-3">{{ $album['album_title'] }}</h4>
-            <h6 class="px-3 pb-2"> {{ $album['images'] == null ? "0" : count(explode(',', $album['images'])) }} photos </h6>
-            {{-- <h6> {{  explode(',', $album['images']) }}</h6> --}}
+            <h6 class="px-3" style="font-family: 'Rubik', sans-serif; font-weight:400"> {{ $album['images'] == null ? "0" : count(explode(',', $album['images'])) }} photos </h6>
+            <div class="px-3 text-light btn btn-dark btn-sm w-100" onclick="deleteAlbum({{ $album['id'] }})">delete<i class="px-1 pb-2 fas fa-trash-alt text-light"></i></div>
         </div>
     @endforeach
 </div>

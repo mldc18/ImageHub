@@ -1,20 +1,3 @@
-/* .glass{
-    background: inherit;
-    height: 700px;
-    position: absolute;
-    overflow: hidden;
-    box-shadow: inset 0 0 0 200px rgba(156, 151, 151, 0.3);
-} */
-
-body{
-    background: red;
-    font-family: 'Rubik', sans-serif;
-    /* background-image: url("https://images.unsplash.com/photo-1516259680870-b878830674f9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"); 
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover; */
-}
-
 .item{
     overflow: hidden;
 }
@@ -31,7 +14,7 @@ body{
     transform: scale(1.2);
 }
 
-div.gallery {
+  div.gallery {
     margin: 5px;
     border: 1px solid #ccc;
     float: left;
@@ -52,9 +35,11 @@ div.gallery {
     height: auto;
   }
   
-  div.desc {
-    padding: 15px;
-    text-align: center;
+  h4.desc {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 140px;
   }
 
   input[type='radio'] { transform: scale(1.5); }

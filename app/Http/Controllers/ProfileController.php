@@ -71,5 +71,16 @@ class ProfileController extends Controller
         }
     }
 
+    public function deleteAlbum($id)
+    {
+        try {
+            $data = Gallery::find($id);
+            $data->delete();
+            return response('Successfully deleted an album!');
+        } catch (Exception $e) {
+            return $e;
+        }
+    }
+
 }
 

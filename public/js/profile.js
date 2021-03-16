@@ -8,11 +8,14 @@ $("#createAlbumForm").on("submit", function (e) {
         url: "/create-album",
         data: $("#createAlbumForm").serialize(),
         success: function (data) {
-            $(".toast").toast("show");
+            $(".toast-body").text("Successfully created an album!");
+            $("#toastProfile").toast("show");
             $("#createAlbumModal").modal("toggle");
             $("#createAlbumForm")[0].reset();
             $(".album-container").append(
-                `<div class="gallery col-md-4 p-0 m-2">
+                `<div class="gallery col-md-4 p-0 m-2" id="gallery` +
+                    data.id +
+                    `">
                     <div onclick="clickView(` +
                     data.images +
                     `)">
@@ -21,9 +24,12 @@ $("#createAlbumForm").on("submit", function (e) {
                     <h4 class="desc px-3 pt-3">` +
                     data.album_title +
                     `</h4>
-                    <h6 class="px-3 pb-2"> ` +
+                    <h6 class="px-3"> ` +
                     0 +
                     ` photos </h6>
+                    <div class="px-3 text-light btn btn-dark btn-sm w-100" onclick="deleteAlbum(` +
+                    data.id +
+                    `)">delete<i class="px-1 pb-2 fas fa-trash-alt text-light"></i></div>
                 </div>`
             );
         },
@@ -34,6 +40,27 @@ $("#createAlbumForm").on("submit", function (e) {
         },
     });
 });
+
+function deleteAlbum(albumId) {
+    let galleryElement = "#gallery" + albumId;
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": jQuery('meta[name="csrf-token"]').attr("content"),
+        },
+    });
+    $.ajax({
+        type: "POST",
+        url: "delete-album/" + albumId,
+        success: function (data) {
+            $(galleryElement).remove();
+            $(".toast-body").text(data);
+            $("#toastProfile").toast("show");
+        },
+        error: function (data) {
+            console.log("error");
+        },
+    });
+}
 
 function clickView(albumImages) {
     $("#imagesModal").modal("show");

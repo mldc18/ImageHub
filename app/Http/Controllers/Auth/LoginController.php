@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use Socialite;
 use App\Models\User;
 use App\Http\Controllers\Controller;
@@ -68,4 +69,9 @@ class LoginController extends Controller
         }
         return redirect()->to('/home');
     }
+
+    public function logout() {
+        Auth::logout();
+        return redirect('/login');
+      }
 }

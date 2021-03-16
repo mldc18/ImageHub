@@ -13,19 +13,18 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src='http://code.jquery.com/jquery-2.1.3.js'></script>
-    <style>
-        body{
-            font-family: 'Rubik', sans-serif;
-        }
-    </style>
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+    body{
+        font-family: 'Rubik', sans-serif;
+    }
+</style>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background: #dc3545">

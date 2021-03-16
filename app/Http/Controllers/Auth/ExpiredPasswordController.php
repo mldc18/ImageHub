@@ -7,12 +7,18 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PasswordExpiredRequest;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class ExpiredPasswordController extends Controller
 {
     public function expired()
     {
-        return view('auth.passwords.expired');
+        $user = Auth::user();
+        $password_changed_at = new Carbon(($user->password_changed_at) ? $user->password_changed_at : $user->created_at);
+        if (Carbon::now()->diffInDays($password_changed_at) >= config('auth.password_expires_days')) {
+            return view('auth.passwords.expired');
+        }
+        return redirect()->back();
     }
 
     public function postExpired(PasswordExpiredRequest $request)
