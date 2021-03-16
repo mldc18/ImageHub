@@ -31,7 +31,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     <div style="display: box-sizing">
-                        <img src="{{url('/images/ym.jpg')}}" height="45px">
+                        <img src="{{url('/images/ym3.jpg')}}" height="45px">
                     </div>
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
