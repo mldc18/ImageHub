@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'ImageHub') }}</title>
 
     <!-- Scripts -->
 
@@ -30,7 +30,9 @@
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background: #dc3545">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
-                    <img src="{{url('/images/ym.jpg')}}" height="60px" >
+                    <div style="display: box-sizing">
+                        <img src="{{url('/images/ym.jpg')}}" height="45px">
+                    </div>
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->

@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-5">
+<div class="container pb-5">
     <div class="row justify-content-center">
         <div class="glass col-md-4 px-5 py-5">
             <center>
-                <img src="{{url('/images/ym.jpg')}}" height="140px" class="mb-5" style="border-radius: 50%">
+                <img src="{{url('/images/ym2.jpg')}}" height="200px" class="mb-5" style="border-radius: 50%">
             </center>
             <div>
                 <form method="POST" action="{{ route('login') }}">
