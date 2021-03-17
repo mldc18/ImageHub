@@ -8,9 +8,9 @@
                 <h1>Reset Password</h1>
 
                 <div class="panel-body">
-                    @if (session('status'))
+                    @if ($status)
                         <div class="alert alert-success">
-                            {{ session('status') }}
+                            {{ $status }}
                         </div>
                         <a href="/">Return to homepage</a>
                     @else

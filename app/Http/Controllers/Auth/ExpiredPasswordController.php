@@ -16,7 +16,7 @@ class ExpiredPasswordController extends Controller
         $user = Auth::user();
         $password_changed_at = new Carbon(($user->password_changed_at) ? $user->password_changed_at : $user->created_at);
         if (Carbon::now()->diffInDays($password_changed_at) >= config('auth.password_expires_days')) {
-            return view('auth.passwords.expired');
+            return view('auth.passwords.expired')->with(['status' => null]);
         }
         return redirect()->back();
     }
@@ -32,6 +32,6 @@ class ExpiredPasswordController extends Controller
             'password' => bcrypt($request->password),
             'password_changed_at' => Carbon::now()->toDateTimeString()
         ]);
-        return redirect()->back()->with(['status' => 'Password changed successfully']);
+        return view('auth.passwords.expired')->with(['status' => 'Password changed successfully']);
     }
 }

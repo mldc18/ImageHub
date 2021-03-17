@@ -19,7 +19,7 @@ $("#createAlbumForm").on("submit", function (e) {
                     <div onclick="clickView(` +
                     data.images +
                     `)">
-                        <img src="images/ym.jpg">
+                        <img src="images/ym2.jpg">
                     </div>
                     <h4 class="desc px-3 pt-3">` +
                     data.album_title +

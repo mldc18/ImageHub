@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function () {
         Route::patch('/choose-album/{id}', [App\Http\Controllers\ProfileController::class, 'chooseAlbum'])->name('choose-album');  
     });
     Route::get('/password/expired', [App\Http\Controllers\Auth\ExpiredPasswordController::class, 'expired'])->name('password.expired');
-    Route::post('password/post_expired', [App\Http\Controllers\Auth\ExpiredPasswordController::class, 'postExpired'])->name('password.post_expired');
+    Route::post('/password/post_expired', [App\Http\Controllers\Auth\ExpiredPasswordController::class, 'postExpired'])->name('password.post_expired');
 });
 Route::get('/sign-in/google', [App\Http\Controllers\Auth\LoginController::class, 'google'])->middleware('guest');
 Route::get('/sign-in/google/redirect', [App\Http\Controllers\Auth\LoginController::class, 'googleRedirect'])->middleware('guest');

@@ -6,7 +6,7 @@
     <div class="toast-container position-absolute top-0 end-0 p-3">
       <div class="toast" id="toastProfile" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
-          <img src="{{url('/images/ym.jpg')}}" height=30 width=30 class="rounded me-2">
+          <img src="{{url('/images/ym2.jpg')}}" height=30 width=30 class="rounded me-2">
           <strong class="me-auto">imagehub</strong>
           <small class="text-muted">just now</small>
           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -26,7 +26,7 @@
     @foreach ($albums as $album)
         <div class="gallery col-md-4 p-0 m-2" id="gallery{{ $album['id'] }}">
             <div onclick="clickView({{ $album['images'] }})">
-                <img src="{{url('/images/ym.jpg')}}">
+                <img src="{{url('/images/ym2.jpg')}}" height=100px>
             </div>
             <h4 class="desc px-3 pt-3">{{ $album['album_title'] }}</h4>
             <h6 class="px-3" style="font-family: 'Rubik', sans-serif; font-weight:400"> {{ $album['images'] == null ? "0" : count(explode(',', $album['images'])) }} photos </h6>

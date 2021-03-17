@@ -26,7 +26,7 @@
                 <div class="toast-container position-absolute bottom-0 start-50 translate-middle-x">
                   <div class="toast" id="toastHome" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="toast-header">
-                      <img src="{{url('/images/ym.jpg')}}" height=30 width=30 class="rounded me-2">
+                      <img src="{{url('/images/ym2.jpg')}}" height=30 width=30 class="rounded me-2">
                       <input type="hidden" id="hidden_input" disabled>
                       <strong class="me-auto">imagehub</strong>
                       <small class="text-muted">just now</small>
